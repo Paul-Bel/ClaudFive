@@ -1,16 +1,25 @@
 import React, {useState} from 'react';
-import {Counter} from "./Components/Claud";
+import {Claud} from "./Components/Claud";
 import './App.css';
 
 function App() {
-        let [num, setNum] = useState<number>(0)
-        const buttonControl = (but: string) => {
-            if (but === 'INC' && num < 5) {setNum(num + 1)}
-            if (but === 'RESET') {setNum(0)}
+    let buttonName = {buttonOne: "INC", buttonTwo: "RESET"}
+    let {buttonOne, buttonTwo} = buttonName
+    let limitation = {min: 0, max: 10}
+    let {min, max} = limitation
+    let [num, setNum] = useState<number>(min)
+    const buttonControl = (but: string) => {
+        if (but === buttonOne && num < max) {
+            setNum(num + 1)
         }
-        return (
+        if (but === buttonTwo) {
+            setNum(min)
+        }
+    }
+
+    return (
         <div className="App">
-            <Counter num={num} buttonControl={buttonControl}/>
+            <Claud num={num} buttonControl={buttonControl} limitation={limitation} buttonName={buttonName}/>
         </div>
     );
 }

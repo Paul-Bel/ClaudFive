@@ -1,29 +1,38 @@
-import React, {useState} from 'react';
+import React from 'react';
 import s from './Сounter.module.css'
 import {Button} from "./Button";
-import {Counters} from "./Сounter";
+import {Counter} from "./Сounter";
+
 
 type buttonProps = {
     num: number,
     buttonControl: (e: string) => void,
+    limitation: {min: number, max: number}
+    buttonName: {buttonOne: string, buttonTwo: string}
 }
 
-export function Counter(props: buttonProps) {
-    let buttonOne = "INC"
-    let buttonTwo = "RESET"
+export function Claud({buttonName, ...props}: buttonProps) {
+
     return (
+
         <div className={s.counterFather}>
 
-            <Counters num={props.num}/>
+            <Counter num={props.num} limitation={props.limitation}/>
             <div className={s.buttuns}>
                 <Button
                     num={props.num}
-                    buttonControl={() => props.buttonControl(buttonOne)}
-                    name={buttonOne}/>
+                    buttonControl={() => props.buttonControl(buttonName.buttonOne)}
+                    name={buttonName.buttonOne}
+                    limitation={props.limitation}
+                    buttonName={buttonName}
+                />
                 <Button
                     num={props.num}
-                    buttonControl={() => props.buttonControl(buttonTwo)}
-                    name={buttonTwo}/>
+                    buttonControl={() => props.buttonControl(buttonName.buttonTwo)}
+                    name={buttonName.buttonTwo}
+                    limitation={props.limitation}
+                    buttonName={buttonName}
+                />
             </div>
         </div>
     );
