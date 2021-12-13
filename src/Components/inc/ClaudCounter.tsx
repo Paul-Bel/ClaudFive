@@ -7,30 +7,34 @@ import {Counter} from "./Сounter";
 type buttonProps = {
     num: number,
     buttonControl: (e: string) => void,
-    limitation: {min: number, max: number}
-    buttonName: {buttonOne: string, buttonTwo: string}
+    min: number,
+    max: number,
+    buttonName: {buttonOne: string, buttonTwo: string, button: string}
 }
 
-export function Claud({buttonName, ...props}: buttonProps) {
+export function ClaudCounter({buttonName, ...props}: buttonProps) {
 
     return (
 
         <div className={s.counterFather}>
 
-            <Counter num={props.num} limitation={props.limitation}/>
+            <Counter num={props.num} min={props.min} max={props.max}/>
+
             <div className={s.buttuns}>
                 <Button
                     num={props.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonOne)}
                     name={buttonName.buttonOne}
-                    limitation={props.limitation}
+                    min={props.min}
+                    max={props.max}
                     buttonName={buttonName}
                 />
                 <Button
                     num={props.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonTwo)}
                     name={buttonName.buttonTwo}
-                    limitation={props.limitation}
+                    min={props.min}
+                    max={props.max}
                     buttonName={buttonName}
                 />
             </div>

@@ -1,13 +1,31 @@
 import React, {useState} from 'react';
-import {Claud} from "./Components/Claud";
+import {ClaudCounter} from "./Components/inc/ClaudCounter";
 import './App.css';
+import {InputNumber} from "./Components/settings/inputNumber";
 
 function App() {
-    let buttonName = {buttonOne: "INC", buttonTwo: "RESET"}
+    let buttonName = {buttonOne: "INC", buttonTwo: "RESET", button: "SET"}
     let {buttonOne, buttonTwo} = buttonName
-    let limitation = {min: 0, max: 10}
-    let {min, max} = limitation
+
+    let min = 0
+    let max = 10
     let [num, setNum] = useState<number>(min)
+
+    const changeMin = (value: number) => {
+        min = value
+    }
+
+    const changeMax = (value: number) => {
+        if(value > max){return max++}
+
+        console.log(max)
+        console.log(value)
+    }
+    console.log(max)
+    let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
+
+
+
     const buttonControl = (but: string) => {
         if (but === buttonOne && num < max) {
             setNum(num + 1)
@@ -18,8 +36,26 @@ function App() {
     }
 
     return (
-        <div className="App">
-            <Claud num={num} buttonControl={buttonControl} limitation={limitation} buttonName={buttonName}/>
+        <div className="tems">
+            <div className="App">
+                <InputNumber
+                    min={min}
+                    max={max}
+                    buttonName={buttonName}
+                    namesValue={namesValue}
+                    changeMin={changeMin}
+                    changeMax={changeMax}
+                />
+            </div>
+            <div className="App">
+                <ClaudCounter
+                    num={num}
+                    buttonControl={buttonControl}
+                    min={min}
+                    max={max}
+                    buttonName={buttonName}/>
+
+            </div>
         </div>
     );
 }

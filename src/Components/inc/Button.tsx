@@ -2,16 +2,17 @@ import React from 'react';
 import s from './Сounter.module.css'
 
 type buttonProps = {
-    num: number,
-    buttonControl: () => void,
+    num?: number,
+    buttonControl?: () => void,
     name: string
-    limitation: {min: number, max: number}
-    buttonName: {buttonOne: string, buttonTwo: string}
+    min: number,
+    max: number,
+    buttonName: {buttonOne: string, buttonTwo: string, button: string}
 }
 
-export function Button({limitation, buttonName, ...props}: buttonProps) {
-let {buttonOne, buttonTwo} = buttonName
-let {min, max} = limitation
+export function Button({min, max, buttonName, ...props}: buttonProps) {
+let {buttonOne, buttonTwo, button} = buttonName
+
 
     return (
         <span className={s.span && s.spanO}>
