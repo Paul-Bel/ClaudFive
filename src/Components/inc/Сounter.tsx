@@ -7,7 +7,6 @@ type ButtonPropsType = {
     min: number,
     max: number,
 }
-
 export function Counter({min, max, ...props}: ButtonPropsType) {
     return (<div
             className={props.num === max ? s.redFive : s.counter}>
