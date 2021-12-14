@@ -25,15 +25,15 @@ export const SetCloud = ({min, max, ...props}: InputNumberType) => {
     }
 
     return (
-        <div className={s.setCloud}>
-            <div className={s.claudCounter__top}>
+        <div className={s.item}>
+            <div className={s.displey}>
             <InputSet
                 setValue={setValue}
                 min={min} max={max}
                 namesValue={props.namesValue}
             />
             </div>
-            <div  className={s.claudCounter__top}>
+            <div  className={s.button}>
                 <Button
                     name={'SET'}
                     min={min}

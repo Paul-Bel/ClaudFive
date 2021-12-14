@@ -16,13 +16,13 @@ export function ClaudCounter({buttonName, ...props}: buttonProps) {
 
     return (
 
-        <div className={s.claudCounter}>
+        <div className={s.item}>
 
-            <div className={s.claudCounter__top}>
+            <div className={s.displey}>
                 <Counter num={props.num} min={props.min} max={props.max}/>
             </div>
 
-            <div  className={s.claudCounter__bottom}>
+            <div  className={s.button}>
                 <Button
                     num={props.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonOne)}

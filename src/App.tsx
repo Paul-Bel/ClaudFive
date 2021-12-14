@@ -32,8 +32,9 @@ function App() {
     }
 
     return (
-        <div className={'tems'}>
-            <div className={'App'}>
+        <div className={'App'}>
+            <div className={'conteiner'}>
+            <div >
                 <SetCloud
                     min={min}
                     max={max}
@@ -42,14 +43,14 @@ function App() {
                     changeInc={changeInc}
                 />
             </div>
-            <div className={'App'}>
+            <div>
                 <ClaudCounter
                     num={num}
                     buttonControl={buttonControl}
                     min={min}
                     max={max}
                     buttonName={buttonName}/>
-
+            </div>
             </div>
             {/*<div>*/}
             {/*    <input type="text"/>*/}
