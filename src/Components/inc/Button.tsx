@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Сounter.module.css'
+import s from '../Ferst.module.css'
 
 type buttonProps = {
     num?: number,
@@ -7,19 +7,28 @@ type buttonProps = {
     name: string
     min: number,
     max: number,
-    buttonName: {buttonOne: string, buttonTwo: string, button: string}
+    buttonName: { buttonOne: string, buttonTwo: string, button: string }
+    setButton?: () => void
 }
 
-export function Button({min, max, buttonName, ...props}: buttonProps) {
-let {buttonOne, buttonTwo, button} = buttonName
+export function Button({num, name, min, max, buttonName, ...props}: buttonProps) {
+    let {buttonOne, buttonTwo} = buttonName
+
+    const buttonHandler = () => {
+        if(props.buttonControl){props.buttonControl()}
+        if (props.setButton){props.setButton()}
+    }
 
 
     return (
-        <span className={s.span && s.spanO}>
+        <span >
         <button
-            disabled={props.name === buttonOne && props.num === max || props.name === buttonTwo && props.num === min}
             className={s.button}
-            onClick={props.buttonControl}>{props.name}</button>
+            disabled={(name === buttonOne && num === max) || (name === buttonTwo && num === min)}
+            onClick={buttonHandler}
+        >
+            {name}
+        </button>
             </span>
     );
 }

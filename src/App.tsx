@@ -1,29 +1,25 @@
 import React, {useState} from 'react';
 import {ClaudCounter} from "./Components/inc/ClaudCounter";
 import './App.css';
-import {InputNumber} from "./Components/settings/inputNumber";
+import {SetCloud} from "./Components/settings/SetCloud";
 
 function App() {
+
     let buttonName = {buttonOne: "INC", buttonTwo: "RESET", button: "SET"}
     let {buttonOne, buttonTwo} = buttonName
-
-    let min = 0
-    let max = 10
-    let [num, setNum] = useState<number>(min)
-
-    const changeMin = (value: number) => {
-        min = value
-    }
-
-    const changeMax = (value: number) => {
-        if(value > max){return max++}
-
-        console.log(max)
-        console.log(value)
-    }
-    console.log(max)
     let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
 
+
+    // let max = 10
+
+    let [min, setMin] = useState<number>(0)
+    let [max, setMax] = useState<number>(10)
+    let [num, setNum] = useState<number>(min)
+
+    const changeInc = (value: number, name: string) => {
+        if(name === namesValue.nameMax) {setMax(value)}
+        if(name === namesValue.nameMin) {setMin(value)}
+    }
 
 
     const buttonControl = (but: string) => {
@@ -36,18 +32,17 @@ function App() {
     }
 
     return (
-        <div className="tems">
-            <div className="App">
-                <InputNumber
+        <div className={'tems'}>
+            <div className={'App'}>
+                <SetCloud
                     min={min}
                     max={max}
                     buttonName={buttonName}
                     namesValue={namesValue}
-                    changeMin={changeMin}
-                    changeMax={changeMax}
+                    changeInc={changeInc}
                 />
             </div>
-            <div className="App">
+            <div className={'App'}>
                 <ClaudCounter
                     num={num}
                     buttonControl={buttonControl}
@@ -56,8 +51,34 @@ function App() {
                     buttonName={buttonName}/>
 
             </div>
+            {/*<div>*/}
+            {/*    <input type="text"/>*/}
+            {/*     <button>sdf</button>*/}
+            {/*</div>*/}
+            {/*<div>*/}
+            {/*    <p>test</p>*/}
+            {/*</div>*/}
+
+
         </div>
     );
 }
 
 export default App;
+
+
+// <div>
+//
+//     <div>
+//         <div>
+//
+//         </div>
+//         <div>
+//
+//         </div>
+//
+//
+//     </div>
+//
+//
+// </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Сounter.module.css'
+import s from './ClaudCounter.module.css'
 import {Button} from "./Button";
 import {Counter} from "./Сounter";
 
@@ -16,11 +16,13 @@ export function ClaudCounter({buttonName, ...props}: buttonProps) {
 
     return (
 
-        <div className={s.counterFather}>
+        <div className={s.claudCounter}>
 
-            <Counter num={props.num} min={props.min} max={props.max}/>
+            <div className={s.claudCounter__top}>
+                <Counter num={props.num} min={props.min} max={props.max}/>
+            </div>
 
-            <div className={s.buttuns}>
+            <div  className={s.claudCounter__bottom}>
                 <Button
                     num={props.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonOne)}
