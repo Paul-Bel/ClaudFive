@@ -1,7 +1,6 @@
 import React from 'react';
 import s from '../Ferst.module.css'
 
-
 type ButtonPropsType = {
     num: number,
     min: number,
