@@ -19,6 +19,7 @@ export function ClaudCounter({buttonName, ...props}: buttonProps) {
         <div className={s.item}>
 
             <div className={s.displey}>
+
                 <Counter num={props.num} min={props.min} max={props.max}/>
             </div>
 

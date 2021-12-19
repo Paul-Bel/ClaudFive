@@ -12,32 +12,27 @@ type InputNumberType = {
 }
 const stylesInput = {'width': '30px'}
 
-
 export const SetCloud = ({min, max, ...props}: InputNumberType) => {
 
-    const [setting, setSettings] = useState({value: 0, names: ''},)
     const [maxcoutn, setMaxCount] = useState<number>(max)
     const [mincoutn, setMinCount] = useState<number>(min)
-    let {nameMax, nameMin} = props.namesValue
 
+    let {nameMax, nameMin} = props.namesValue
 
     const setValue = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.currentTarget.id == nameMax) {
-
             setMaxCount(e.currentTarget.valueAsNumber)
         }
         if (e.currentTarget.id == nameMin) {
             setMinCount(Number(e.currentTarget.value))
         }
-
-        setValue(JSON.parse(e.currentTarget.value))
     }
-
 
     const setButton = () => {
-        props.changeInc(setting.value, setting.names)
-    }
+        props.changeInc(maxcoutn, props.namesValue.nameMax)
+        props.changeInc(mincoutn, props.namesValue.nameMin)
 
+    }
 
 
     return (
@@ -69,19 +64,6 @@ export const SetCloud = ({min, max, ...props}: InputNumberType) => {
             </span>
 
             </div>
-
-
-            {/*<InputSet*/}
-            {/*    setValue={setValue}*/}
-            {/*    min={min} max={max}*/}
-            {/*    namesValue={props.namesValue}*/}
-            {/*    setMaxCount={setMaxCount}*/}
-            {/*    setMinCount={setMinCount}*/}
-            {/*    maxcoutn={maxcoutn}*/}
-            {/*    mincoutn={mincoutn}*/}
-            {/*/>*/}
-
-
 
             <div  className={s.button}>
                 <Button
