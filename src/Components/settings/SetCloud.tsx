@@ -15,6 +15,9 @@ type InputNumberType = {
 export const SetCloud = ({min, max, ...props}: InputNumberType) => {
 
     const [setting, setSettings] = useState({value: 0, names: ''},)
+    const [maxcoutn, setMaxCount] = useState<number>(max)
+    const [mincoutn, setMinCount] = useState<number>(min)
+
 
     const setButton = () => {
         props.changeInc(setting.value, setting.names)
@@ -31,8 +34,14 @@ export const SetCloud = ({min, max, ...props}: InputNumberType) => {
                 setValue={setValue}
                 min={min} max={max}
                 namesValue={props.namesValue}
+                setMaxCount={setMaxCount}
+                setMinCount={setMinCount}
+                maxcoutn={maxcoutn}
+                mincoutn={mincoutn}
             />
             </div>
+
+
             <div  className={s.button}>
                 <Button
                     name={'SET'}
@@ -40,8 +49,10 @@ export const SetCloud = ({min, max, ...props}: InputNumberType) => {
                     max={max}
                     buttonName={props.buttonName}
                     setButton={setButton}
+                    mincoutn={mincoutn}
                 />
             </div>
+
 
         </div>
     )

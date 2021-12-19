@@ -4,13 +4,9 @@ import './App.css';
 import {SetCloud} from "./Components/settings/SetCloud";
 
 function App() {
-
     let buttonName = {buttonOne: "INC", buttonTwo: "RESET", button: "SET"}
     let {buttonOne, buttonTwo} = buttonName
     let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
-
-
-    // let max = 10
 
     let [min, setMin] = useState<number>(0)
     let [max, setMax] = useState<number>(10)
@@ -20,7 +16,6 @@ function App() {
         if(name === namesValue.nameMax) {setMax(value)}
         if(name === namesValue.nameMin) {setMin(value)}
     }
-
 
     const buttonControl = (but: string) => {
         if (but === buttonOne && num < max) {
@@ -52,15 +47,6 @@ function App() {
                     buttonName={buttonName}/>
             </div>
             </div>
-            {/*<div>*/}
-            {/*    <input type="text"/>*/}
-            {/*     <button>sdf</button>*/}
-            {/*</div>*/}
-            {/*<div>*/}
-            {/*    <p>test</p>*/}
-            {/*</div>*/}
-
-
         </div>
     );
 }

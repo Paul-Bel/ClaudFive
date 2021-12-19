@@ -1,6 +1,7 @@
 import React from 'react';
 import s from '../Ferst.module.css'
 
+
 type buttonProps = {
     num?: number,
     buttonControl?: () => void,
@@ -9,6 +10,7 @@ type buttonProps = {
     max: number,
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
     setButton?: () => void
+    mincoutn?: number
 }
 
 export function Button({num, name, min, max, buttonName, ...props}: buttonProps) {
@@ -21,10 +23,14 @@ export function Button({num, name, min, max, buttonName, ...props}: buttonProps)
 
 
     return (
-        <span >
+        <span>
         <button
-            className={s.button}
-            disabled={(name === buttonOne && num === max) || (name === buttonTwo && num === min)}
+            className={s.buttonSet}
+            disabled={
+                (name === buttonOne && num === max)
+                || (name === buttonTwo && num === min)
+            || (name === "SET" && props.mincoutn === -1)}
+
             onClick={buttonHandler}
         >
             {name}

@@ -5,34 +5,72 @@ type InputType = {
     max: number,
     setValue: (value: number, name: string) => void
     namesValue: { nameMax: string, nameMin: string }
-
+    setMinCount: (min: number) => void
+    setMaxCount: (max: number) => void
+    mincoutn: number
+    maxcoutn: number
 }
+const stylesInput = {'width': '30px'}
+const div = {'margin': 'auto'}
 
 export const InputSet = ({namesValue, min, max, ...props}: InputType) => {
     let {nameMax, nameMin} = namesValue
 
-    const [maxcoutn, setMaxCount] = useState<number>(max)
-    const [mincoutn, setMinCount] = useState<number>(min)
 
     const setValue = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.currentTarget.name)
-        if(e.currentTarget.id == nameMax) {setMaxCount(e.currentTarget.valueAsNumber)}
-        if(e.currentTarget.id == nameMin) {setMinCount(JSON.parse(e.currentTarget.value))}
+        if (e.currentTarget.id == nameMax) {
 
+            props.setMaxCount(e.currentTarget.valueAsNumber)
+        }
+        if (e.currentTarget.id == nameMin) {
+            props.setMinCount(Number(e.currentTarget.value))
+        }
 
-        // if (props.changeInc)
-            props.setValue(JSON.parse(e.currentTarget.value), e.currentTarget.id)
+        props.setValue(JSON.parse(e.currentTarget.value), e.currentTarget.id)
     }
 
 
     return (
-        <div>
+        <div style={div}>
         <span>{nameMax}
-            <input id={nameMax} value={maxcoutn} onChange={setValue} type="number"/></span>
+            <input
+                style={stylesInput}
+                min={props.mincoutn + 1}
+                id={nameMax}
+                value={props.maxcoutn}
+                onChange={setValue}
+                type="number"
+
+            />
+        </span>
             <p/>
 
             <span>{nameMin}
-                <input id={nameMin} value={mincoutn} onChange={setValue} type="number"/></span>
+                <input
+                    style={stylesInput}
+                    id={nameMin}
+                    value={props.mincoutn}
+                    onChange={setValue}
+                    type="number"
+                    min={-1}
+                    max={props.maxcoutn - 1}
+                />
+            </span>
+            <div>
+
+            </div>
+            {props.mincoutn < 0 && <SpanError/>}
+
+        </div>
+
+    )
+}
+
+const SpanError = () => {
+    const stylesSpan = {color: 'red', fontSize: '10px'}
+    return (
+        <div style={stylesSpan}>
+            Enter correct number
         </div>
     )
 }

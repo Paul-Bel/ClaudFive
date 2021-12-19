@@ -1,0 +1,10 @@
+.buttonSet {
+    border-radius: 25px;
+    border: 1px solid navajowhite;
+    background-color: bisque;
+}
+
+.redFive {
+    font-size: 65px;
+    color: red;
+}
