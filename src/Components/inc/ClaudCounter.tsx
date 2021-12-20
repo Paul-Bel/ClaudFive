@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './ClaudCounter.module.css'
 import {Button} from "./Button";
 import {Counter} from "./Сounter";
@@ -10,17 +10,18 @@ type buttonProps = {
     min: number,
     max: number,
     buttonName: {buttonOne: string, buttonTwo: string, button: string}
+    displey: boolean
 }
 
 export function ClaudCounter({buttonName, ...props}: buttonProps) {
+
 
     return (
 
         <div className={s.item}>
 
             <div className={s.displey}>
-
-                <Counter num={props.num} min={props.min} max={props.max}/>
+                <Counter min={props.min}  max={props.max} num={props.num} displey={props.displey}/>
             </div>
 
             <div  className={s.button}>
@@ -31,6 +32,7 @@ export function ClaudCounter({buttonName, ...props}: buttonProps) {
                     min={props.min}
                     max={props.max}
                     buttonName={buttonName}
+                    displey={props.displey}
                 />
                 <Button
                     num={props.num}
@@ -39,6 +41,7 @@ export function ClaudCounter({buttonName, ...props}: buttonProps) {
                     min={props.min}
                     max={props.max}
                     buttonName={buttonName}
+                    displey={props.displey}
                 />
             </div>
         </div>

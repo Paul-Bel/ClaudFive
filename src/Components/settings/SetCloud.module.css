@@ -13,8 +13,8 @@
     height: 80px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-around;
-
+    flex-direction: column;
+    justify-content: space-around
 }
 
 .button {
@@ -25,5 +25,8 @@
     justify-content: space-around;
     align-items: center;
 }
-
+.setCoumter {
+    display: flex;
+    justify-content: space-around;
+}
 
