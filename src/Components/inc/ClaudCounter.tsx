@@ -5,43 +5,42 @@ import {Counter} from "./Сounter";
 
 
 type buttonProps = {
-    num: number,
+    counterValue: {min: number, max: number, num: number}
     buttonControl: (e: string) => void,
-    min: number,
-    max: number,
     buttonName: {buttonOne: string, buttonTwo: string, button: string}
     displey: boolean
+    // setCounterValue: ({counterValue}) => void
 }
 
-export function ClaudCounter({buttonName, ...props}: buttonProps) {
-
+export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
+// let {min, max, num} = counterValue
 
     return (
 
         <div className={s.item}>
 
             <div className={s.displey}>
-                <Counter min={props.min}  max={props.max} num={props.num} displey={props.displey}/>
+                <Counter min={counterValue.min}  max={counterValue.max} num={counterValue.num} displey={props.displey}/>
             </div>
 
             <div  className={s.button}>
                 <Button
-                    num={props.num}
+                    num={counterValue.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonOne)}
-                    name={buttonName.buttonOne}
-                    min={props.min}
-                    max={props.max}
+                    min={counterValue.min}
+                    max={counterValue.max}
                     buttonName={buttonName}
-                    displey={props.displey}
+                    display={props.displey}
+                    name={buttonName.buttonOne}
                 />
                 <Button
-                    num={props.num}
+                    num={counterValue.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonTwo)}
-                    name={buttonName.buttonTwo}
-                    min={props.min}
-                    max={props.max}
+                    min={counterValue.min}
+                    max={counterValue.max}
                     buttonName={buttonName}
-                    displey={props.displey}
+                    display={props.displey}
+                    name={buttonName.buttonTwo}
                 />
             </div>
         </div>

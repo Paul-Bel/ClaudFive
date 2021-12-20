@@ -37,7 +37,7 @@ export function Counter({min, max, ...props}: ButtonPropsType) {
     return (
         <div style={div}
             className={props.num === max ? s.redFive : s.counter}>
-            {props.displey ? props.num : (min === max || min === -1) ? ErrorDispl() : SetDispley()}
+            {props.displey ? props.num : (min === max || min === -1 || min > max) ? ErrorDispl() : SetDispley()}
         </div>
     );
 }
