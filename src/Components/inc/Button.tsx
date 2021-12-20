@@ -10,7 +10,7 @@ type buttonProps = {
     max: number,
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
     setButton?: () => void
-    mincoutn?: number
+
 }
 
 export function Button({num, name, min, max, buttonName, ...props}: buttonProps) {
@@ -29,7 +29,7 @@ export function Button({num, name, min, max, buttonName, ...props}: buttonProps)
             disabled={
                 (name === buttonOne && num === max)
                 || (name === buttonTwo && num === min)
-            || (name === "SET" && props.mincoutn === -1)}
+            || (name === "SET" && min === -1)}
 
             onClick={buttonHandler}
         >

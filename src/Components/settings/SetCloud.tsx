@@ -8,71 +8,89 @@ type InputNumberType = {
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
     namesValue: { nameMax: string, nameMin: string }
     changeInc: (value: number, name: string) => void
-
+    setMax: (max: number) => void
+    setMin: (min: number) => void
+    setDispley: (display: boolean) => void
+    setNum: (min: number) => void
 }
-const stylesInput = {'width': '30px'}
+const stylesInput = {
+    'width': '50px',
+    borderRadius: '5px'
+}
 
-export const SetCloud = ({min, max, ...props}: InputNumberType) => {
+export const SetCloud = ({min, max, setMax, setMin, ...props}: InputNumberType) => {
 
-    const [maxcoutn, setMaxCount] = useState<number>(max)
-    const [mincoutn, setMinCount] = useState<number>(min)
+    const changeInc = () => {
+        props.setDispley(false)
+    }
 
     let {nameMax, nameMin} = props.namesValue
 
     const setValue = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.currentTarget.id == nameMax) {
-            setMaxCount(e.currentTarget.valueAsNumber)
+            setMax(e.currentTarget.valueAsNumber)
         }
         if (e.currentTarget.id == nameMin) {
-            setMinCount(Number(e.currentTarget.value))
+            setMin(Number(e.currentTarget.value))
+            props.setNum(Number(e.currentTarget.value))
         }
     }
 
     const setButton = () => {
-        props.changeInc(maxcoutn, props.namesValue.nameMax)
-        props.changeInc(mincoutn, props.namesValue.nameMin)
+        props.setDispley(true)
 
     }
-
 
     return (
         <div className={s.item}>
             <div className={s.displey}>
-<span>   {nameMax}
-                <input
-                    style={stylesInput}
-                    min={mincoutn + 1}
-                    id={nameMax}
-                    value={maxcoutn}
-                    onChange={setValue}
-                    type="number"
+<div className={s.setCoumter}>
+                <div >
+                    {nameMax}
+                </div>
+                <div>
+                    <input
+                        className={s.input}
+                        style={stylesInput}
+                        min={min + 1}
+                        id={nameMax}
+                        value={max}
+                        onChange={setValue}
+                        type="number"
+                        onClick={changeInc}
+                    />
+                </div>
+</div>
+                <div className={s.setCoumter}>
+                <div >
+                    {nameMin}
+                </div>
+                <div>
+                    <input
 
-                />
-            </span>
-            <p/>
-
-            <span>{nameMin}
-                <input
-                    style={stylesInput}
-                    id={nameMin}
-                    value={mincoutn}
-                    onChange={setValue}
-                    type="number"
-                    min={-1}
-                    max={maxcoutn - 1}
-                />
-            </span>
+                        className={s.input}
+                        style={stylesInput}
+                        id={nameMin}
+                        value={min}
+                        onChange={setValue}
+                        type="number"
+                        min={-1}
+                        max={max - 1}
+                        onClick={changeInc}
+                    />
+                </div>
+                </div>
 
             </div>
 
-            <div  className={s.button}>
+            <div className={s.button}>
                 <Button
                     name={'SET'}
                     min={min}
                     max={max}
                     buttonName={props.buttonName}
                     setButton={setButton}
-                    mincoutn={mincoutn}
+
                 />
             </div>
 

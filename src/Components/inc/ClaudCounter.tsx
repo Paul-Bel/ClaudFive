@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './ClaudCounter.module.css'
 import {Button} from "./Button";
-import {Counter} from "./Сounter";
+import {Counter, SetDispley} from "./Сounter";
 
 
 type buttonProps = {
@@ -10,17 +10,22 @@ type buttonProps = {
     min: number,
     max: number,
     buttonName: {buttonOne: string, buttonTwo: string, button: string}
+    displey: boolean
 }
 
 export function ClaudCounter({buttonName, ...props}: buttonProps) {
+
 
     return (
 
         <div className={s.item}>
 
             <div className={s.displey}>
+                {props.displey ?
+                <Counter min={props.min}  max={props.max} num={props.num}/> :
+                    <SetDispley />
+                }
 
-                <Counter num={props.num} min={props.min} max={props.max}/>
             </div>
 
             <div  className={s.button}>
