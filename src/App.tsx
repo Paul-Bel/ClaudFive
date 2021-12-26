@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {ClaudCounter} from "./Components/inc/ClaudCounter";
+import {ClaudCounter} from "./Components/VariantOne/inc/ClaudCounter";
 import './App.css';
-import {SetCloud} from "./Components/settings/SetCloud";
+import {SetCloud} from "./Components/VariantOne/settings/SetCloud";
 
 // export type CounterType = {
 // min: number
