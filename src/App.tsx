@@ -70,8 +70,8 @@ function App() {
         <div className={'App'}>
 
             <div className={"block"}>
-            <NavLink to={"/FirsVar/"}><button >First_option</button></NavLink>
-            <NavLink to={"/SecondVar/"}><button>Second_option</button></NavLink>
+            <NavLink to={"/FirsVar/"}><button className={'select'}>First_option</button></NavLink>
+            <NavLink to={"/SecondVar/"}><button className={'select'}>Second_option</button></NavLink>
                 </div>
             <Routes>
 

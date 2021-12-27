@@ -1,5 +1,5 @@
 .item {
-    border: 2px solid indianred;
+    border: 2px solid midnightblue;
     border-radius: 15px;
     padding: 20px;
     width: 270px;
@@ -8,7 +8,7 @@
 }
 
 .displey {
-    border: 2px solid wheat;
+    border: 2px solid midnightblue;
     margin-bottom: 24px;
     height: 80px;
     border-radius: 10px;
@@ -19,7 +19,7 @@
 
 .button {
     padding: 5px;
-    border: 2px solid wheat;
+    border: 2px solid midnightblue;
     border-radius: 10px;
     display: flex;
     justify-content: space-around;

@@ -1,12 +1,12 @@
 .conteiner {
     background-color: gray;
-
     width: 767px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 15px;
+    border-radius: 0 0 15px 15px;
     padding: 50px 0;
+    /*border: midnightblue;*/
 }
 
 .App {
@@ -15,9 +15,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    background-color: midnightblue;
 }
 
 .block {
+    width: 767px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+}
+
+.select {
+    font-size: 30px;
+    width: 320px;
+    border-radius: 15px 15px 0 0;
+    background-color: gray;
+    cursor: pointer;
+    color: midnightblue;
+
 }

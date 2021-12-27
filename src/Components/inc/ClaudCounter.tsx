@@ -13,16 +13,11 @@ type buttonProps = {
 }
 
 export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
-// let {min, max, num} = counterValue
-
     return (
-
         <div className={s.item}>
-
             <div className={s.displey}>
                 <Counter min={counterValue.min} max={counterValue.max} num={counterValue.num} displey={props.displey}/>
             </div>
-
             <div className={s.button}>
                 <Button
                     num={counterValue.num}
