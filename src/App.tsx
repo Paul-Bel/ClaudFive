@@ -68,9 +68,11 @@ function App() {
         <BrowserRouter>
 
         <div className={'App'}>
-            <NavLink to={"/FirsVar/"}><button > Первый счетчик</button></NavLink>
-            <NavLink to={"/SecondVar/"}><button> Второй счетчик</button></NavLink>
-            {/*<NavLink to={"/SecondVar/"}><button> Второй счетчик</button></NavLink>*/}
+
+            <div className={"block"}>
+            <NavLink to={"/FirsVar/"}><button >First_option</button></NavLink>
+            <NavLink to={"/SecondVar/"}><button>Second_option</button></NavLink>
+                </div>
             <Routes>
 
             <Route path='/FirsVar'

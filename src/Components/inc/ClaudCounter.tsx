@@ -4,12 +4,12 @@ import {Counter} from "./Сounter";
 import React from "react";
 
 type buttonProps = {
-    counterValue: {min: number, max: number, num: number}
+    counterValue: { min: number, max: number, num: number }
     buttonControl: (e: string) => void,
-    buttonName: {buttonOne: string, buttonTwo: string, button: string}
+    buttonName: { buttonOne: string, buttonTwo: string, button: string}
     displey: boolean
     id?: boolean
-    changeSettings?: ()=>void
+    changeSettings?: () => void
 }
 
 export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
@@ -20,10 +20,10 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
         <div className={s.item}>
 
             <div className={s.displey}>
-                <Counter min={counterValue.min}  max={counterValue.max} num={counterValue.num} displey={props.displey}/>
+                <Counter min={counterValue.min} max={counterValue.max} num={counterValue.num} displey={props.displey}/>
             </div>
 
-            <div  className={s.button}>
+            <div className={s.button}>
                 <Button
                     num={counterValue.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonOne)}
@@ -32,26 +32,27 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
                     buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonOne}
-                    active={true}
                 />
                 <Button
                     num={counterValue.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonTwo)}
-                   min={counterValue.min}
-                   max={counterValue.max}
+                    min={counterValue.min}
+                    max={counterValue.max}
                     buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonTwo}
-                    active={true}
+
                 />
-                { props.id &&
+                {props.id &&
                 <Button
                     buttonName={buttonName}
-                    setButton={props.changeSettings}
+                    changeSettings={props.changeSettings}
                     name={buttonName.button}
-                    // display={props.displey}
+                    num={counterValue.num}
                     id={props.id}
-                    active={false}
+                    min={counterValue.min}
+                    max={counterValue.max}
+
                 />}
                 {/*<NavLink to={"/FirsVar/"}><button className={a.buttonSet}> Первый счетчик</button></NavLink>*/}
 

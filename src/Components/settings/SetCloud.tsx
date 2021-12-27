@@ -1,16 +1,13 @@
 import React, {ChangeEvent} from "react";
 import s from './SetCloud.module.css'
 import {Button} from "../inc/Button";
-import { NavLink } from "react-router-dom";
-import a from "../Ferst.module.css";
-
 
 type CV = {
     min: number, max: number, num: number
 }
 type InputNumberType = {
     counterValue: { min: number, max: number, num: number }
-    buttonName: { buttonOne: string, buttonTwo: string, button: string }
+    buttonName: { buttonOne: string, buttonTwo: string, button: string}
     namesValue: { nameMax: string, nameMin: string }
     changeInc: (value: number, name: string) => void
     setOfButton: (value: number, name: string) => void
@@ -91,7 +88,6 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                 </div>
 
             </div>
-
             <div className={s.button}>
                 <Button
                     min={min}
@@ -99,14 +95,8 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     buttonName={props.buttonName}
                     setButton={setButton}
                     name={props.buttonName.button}
-                    display={props.displey}
-                    active={true}
+                    changeSettings={props.changeSettings}
                 />
-
-
-
-
-
             </div>
 
 

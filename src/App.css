@@ -1,6 +1,6 @@
 .conteiner {
     background-color: gray;
-    margin: 0 auto;
+
     width: 767px;
     display: flex;
     justify-content: space-around;
@@ -10,8 +10,14 @@
 }
 
 .App {
+    margin: 0 auto;
     height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
 
+.block {
+    display: flex;
+    flex-direction: column;
 }

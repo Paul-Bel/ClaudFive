@@ -9,7 +9,7 @@ type CV = {
 }
 type CoutnerSetType = {
     counterValue: { min: number, max: number, num: number }
-    buttonName: { buttonOne: string, buttonTwo: string, button: string }
+    buttonName: { buttonOne: string, buttonTwo: string, button: string}
     namesValue: { nameMax: string, nameMin: string }
     changeInc: (value: number, name: string) => void
     setOfButton: (value: number, name: string) => void
@@ -24,7 +24,6 @@ export const CounterSet = (props: CoutnerSetType) => {
     return (
         <div className={'conteiner'}>
             <div>
-
                 <SetCloud
                     counterValue={props.counterValue}
                     buttonName={props.buttonName}
