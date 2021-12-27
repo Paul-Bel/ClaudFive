@@ -17,15 +17,6 @@ type InputNumberType = {
     id?: boolean
     changeSettings?: () => void
 }
-const stylesInput = {
-    'width': '80px',
-    borderRadius: '5px'
-}
-const redStyle = {
-    background: 'red',
-    'width': '80px',
-    borderRadius: '5px',
-}
 
 export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     let {min, max} = counterValue
@@ -57,8 +48,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     </div>
                     <div>
                         <input
-                            className={s.input}
-                            style={min === max ? redStyle : stylesInput}
+                            className={min === max ? s.redStyle : s.stylesInput}
                             min={min}
                             id={nameMax}
                             value={max}
@@ -74,8 +64,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     </div>
                     <div>
                         <input
-                            className={s.input}
-                            style={min === max ? redStyle : min === -1 ? redStyle : stylesInput}
+                            className={min === max ? s.redStyle : min === -1 ? s.redStyle : s.stylesInput}
                             id={nameMin}
                             value={min}
                             onChange={setValue}

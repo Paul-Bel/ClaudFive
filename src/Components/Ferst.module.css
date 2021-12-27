@@ -1,13 +1,35 @@
 .buttonSet {
     border-radius: 25px;
-    border: 1px solid midnightblue;
+    border: 2px solid midnightblue;
     background-color: gray;
     width: 85px;
     color: midnightblue;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .redFive {
     font-size: 65px;
+    font-weight: bold;
     color: red;
+    font-weight: bold;
+}
+
+.div {
+
+    font-size: 35px;
+    text-align: center;
+
+}
+
+.divSet {
+    /*margin: 0 auto;*/
+    font-size: 25px;
+    color: brown;
+    text-align: center;
+    font-weight: bold;
+}
+.counter {
+    font-size: 65px;
+    font-weight: bold;
 }
