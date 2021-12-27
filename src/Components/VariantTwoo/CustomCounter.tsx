@@ -1,8 +1,7 @@
-import React from "react";
-import {SetCloud} from "../settings/SetCloud";
+import React, {useState} from "react";
 import './../../App.css';
+import {SetCloud} from "../settings/SetCloud";
 import {ClaudCounter} from "../inc/ClaudCounter";
-import {NavLink} from "react-router-dom";
 
 type CV = {
     min: number, max: number, num: number
@@ -17,14 +16,16 @@ type CoutnerSetType = {
     setCounterValue: (value: CV) => void
     displey: boolean
     buttonControl: (e: string) => void,
-    id?: string
 }
+export const CustomCounter = (props: CoutnerSetType) => {
+    const [settings, setSettings] = useState(true)
+    const changeSettings = () => {
+        setSettings(!settings)
+    }
 
-export const CounterSet = (props: CoutnerSetType) => {
     return (
         <div className={'conteiner'}>
-            <div>
-
+            {!settings ?
                 <SetCloud
                     counterValue={props.counterValue}
                     buttonName={props.buttonName}
@@ -34,18 +35,19 @@ export const CounterSet = (props: CoutnerSetType) => {
                     setCounterValue={props.setCounterValue}
                     setDispleys={props.setDispleys}
                     displey={props.displey}
+                    id={settings}
 
                 />
-            </div>
-            <div>
+                :
                 <ClaudCounter
+                    id={settings}
                     counterValue={props.counterValue}
                     buttonControl={props.buttonControl}
                     buttonName={props.buttonName}
                     displey={props.displey}
-                />
+                    changeSettings={changeSettings}
+                />}
 
-            </div>
         </div>
 
     )

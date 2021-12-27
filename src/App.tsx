@@ -1,13 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {ClaudCounter} from "./Components/VariantOne/inc/ClaudCounter";
 import './App.css';
-import {SetCloud} from "./Components/VariantOne/settings/SetCloud";
-
-// export type CounterType = {
-// min: number
-//     max: number
-//      num: number
-// }
+import {CounterSet} from "./Components/VariantOne/CounterSet";
+import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
+import {CustomCounter} from "./Components/VariantTwoo/CustomCounter";
+import a from "./Components/Ferst.module.css";
 
 function App() {
     let buttonName = {buttonOne: "INC", buttonTwo: "RESET", button: "SET"}
@@ -32,7 +28,6 @@ function App() {
     useEffect(() => {
         localStorage.setItem('values', JSON.stringify(counterValue))
     }, [counterValue])
-
 
     const setOfButton = (value: number, name: string) => {
         let copy = {...counterValue}
@@ -70,32 +65,44 @@ function App() {
     }
 
     return (
+        <BrowserRouter>
+
         <div className={'App'}>
-            <div className={'conteiner'}>
-                <div>
-                    <SetCloud
-                        counterValue={counterValue}
-                        buttonName={buttonName}
-                        namesValue={namesValue}
-                        changeInc={changeInc}
-                        setOfButton={setOfButton}
-                        setCounterValue={setCounterValue}
-                        setDispleys={setDispleys}
-                        displey={displey}
+            <NavLink to={"/FirsVar/"}><button > Первый счетчик</button></NavLink>
+            <NavLink to={"/SecondVar/"}><button> Второй счетчик</button></NavLink>
+            {/*<NavLink to={"/SecondVar/"}><button> Второй счетчик</button></NavLink>*/}
+            <Routes>
 
-                    />
-                </div>
-                <div>
-                    <ClaudCounter
-                        counterValue={counterValue}
-                        buttonControl={buttonInc}
-                        buttonName={buttonName}
-                        displey={displey}
-                    />
+            <Route path='/FirsVar'
+                   element={<CounterSet
+                       counterValue={counterValue}
+                       buttonName={buttonName}
+                       namesValue={namesValue}
+                       changeInc={changeInc}
+                       setOfButton={setOfButton}
+                       setCounterValue={setCounterValue}
+                       setDispleys={setDispleys}
+                       displey={displey}
+                       buttonControl={buttonInc}
+                   />}/>
 
-                </div>
-            </div>
+            <Route path='/SecondVar'
+                   element={
+            <CustomCounter
+                counterValue={counterValue}
+                buttonName={buttonName}
+                namesValue={namesValue}
+                changeInc={changeInc}
+                setOfButton={setOfButton}
+                setCounterValue={setCounterValue}
+                setDispleys={setDispleys}
+                displey={displey}
+                buttonControl={buttonInc}
+            />}/>
+            </Routes>
         </div>
+
+        </BrowserRouter>
     );
 }
 

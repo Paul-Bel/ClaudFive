@@ -1,17 +1,19 @@
 import React from 'react';
-import s from '../../Ferst.module.css'
+import s from '../Ferst.module.css'
 
 
 type ButtonPropsType = {
     num?: number,
     buttonControl?: () => void,
-    min: number,
-    max: number,
+    min?: number,
+    max?: number,
     name: string
     setButton?: () => void
-    display: boolean
+    display?: boolean
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
-
+    id?: boolean
+    changeSettings?: ()=>void
+    active: boolean
 }
 
 export function Button({num, min, max, buttonName, name, ...props}: ButtonPropsType) {
@@ -24,15 +26,16 @@ export function Button({num, min, max, buttonName, name, ...props}: ButtonPropsT
         if (props.setButton) {
             props.setButton()
         }
+        if(props.changeSettings){props.changeSettings()}
     }
 
 
     return (
-        <span>
 
         <button
             className={s.buttonSet}
             disabled={
+             props.active &&
                 (name === buttonName.buttonOne && !props.display)
                 || (name === buttonName.buttonTwo && !props.display)
                 || (name === buttonName.button && props.display)
@@ -46,7 +49,7 @@ export function Button({num, min, max, buttonName, name, ...props}: ButtonPropsT
         >
             {name}
         </button>
-            </span>
+
     );
 }
 

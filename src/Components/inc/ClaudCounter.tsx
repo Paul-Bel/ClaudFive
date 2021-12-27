@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
 import s from './ClaudCounter.module.css'
 import {Button} from "./Button";
 import {Counter} from "./Сounter";
-
+import React from "react";
 
 type buttonProps = {
     counterValue: {min: number, max: number, num: number}
     buttonControl: (e: string) => void,
     buttonName: {buttonOne: string, buttonTwo: string, button: string}
     displey: boolean
-    // setCounterValue: ({counterValue}) => void
+    id?: boolean
+    changeSettings?: ()=>void
 }
 
 export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
@@ -32,16 +32,30 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
                     buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonOne}
+                    active={true}
                 />
                 <Button
                     num={counterValue.num}
                     buttonControl={() => props.buttonControl(buttonName.buttonTwo)}
-                    min={counterValue.min}
-                    max={counterValue.max}
+                   min={counterValue.min}
+                   max={counterValue.max}
                     buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonTwo}
+                    active={true}
                 />
+                { props.id &&
+                <Button
+                    buttonName={buttonName}
+                    setButton={props.changeSettings}
+                    name={buttonName.button}
+                    // display={props.displey}
+                    id={props.id}
+                    active={false}
+                />}
+                {/*<NavLink to={"/FirsVar/"}><button className={a.buttonSet}> Первый счетчик</button></NavLink>*/}
+
+
             </div>
         </div>
     );

@@ -1,7 +1,9 @@
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent} from "react";
 import s from './SetCloud.module.css'
 import {Button} from "../inc/Button";
-// import {CounterType} from "../../App";
+import { NavLink } from "react-router-dom";
+import a from "../Ferst.module.css";
+
 
 type CV = {
     min: number, max: number, num: number
@@ -15,6 +17,8 @@ type InputNumberType = {
     setDispleys: (display: boolean) => void
     setCounterValue: (value: CV) => void
     displey: boolean
+    id?: boolean
+    changeSettings?: () => void
 }
 const stylesInput = {
     'width': '80px',
@@ -34,7 +38,9 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     const setButton = () => {
         props.setDispleys(true)
         props.setOfButton(min, props.buttonName.button)
-
+        if(props.changeSettings){
+            props.changeSettings()
+        }
     }
     let {nameMax, nameMin} = props.namesValue
     const setValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -94,7 +100,13 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     setButton={setButton}
                     name={props.buttonName.button}
                     display={props.displey}
+                    active={true}
                 />
+
+
+
+
+
             </div>
 
 
