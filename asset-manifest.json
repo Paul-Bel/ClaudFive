@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ClaudFive/static/css/main.daf66f8d.chunk.css",
-    "main.js": "/ClaudFive/static/js/main.64cf6e52.chunk.js",
-    "main.js.map": "/ClaudFive/static/js/main.64cf6e52.chunk.js.map",
+    "main.js": "/ClaudFive/static/js/main.d15fa339.chunk.js",
+    "main.js.map": "/ClaudFive/static/js/main.d15fa339.chunk.js.map",
     "runtime-main.js": "/ClaudFive/static/js/runtime-main.180ba845.js",
     "runtime-main.js.map": "/ClaudFive/static/js/runtime-main.180ba845.js.map",
     "static/js/2.03c5a6bf.chunk.js": "/ClaudFive/static/js/2.03c5a6bf.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.180ba845.js",
     "static/js/2.03c5a6bf.chunk.js",
     "static/css/main.daf66f8d.chunk.css",
-    "static/js/main.64cf6e52.chunk.js"
+    "static/js/main.d15fa339.chunk.js"
   ]
 }
