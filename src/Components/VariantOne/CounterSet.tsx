@@ -2,7 +2,6 @@ import React from "react";
 import {SetCloud} from "../settings/SetCloud";
 import './../../App.css';
 import {ClaudCounter} from "../inc/ClaudCounter";
-import {NavLink} from "react-router-dom";
 
 type CV = {
     min: number, max: number, num: number
@@ -33,7 +32,6 @@ export const CounterSet = (props: CoutnerSetType) => {
                     setCounterValue={props.setCounterValue}
                     setDispleys={props.setDispleys}
                     displey={props.displey}
-
                 />
             </div>
             <div>
@@ -43,9 +41,7 @@ export const CounterSet = (props: CoutnerSetType) => {
                     buttonName={props.buttonName}
                     displey={props.displey}
                 />
-
             </div>
         </div>
-
     )
 }

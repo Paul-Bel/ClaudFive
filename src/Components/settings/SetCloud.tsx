@@ -7,7 +7,7 @@ type CV = {
 }
 type InputNumberType = {
     counterValue: { min: number, max: number, num: number }
-    buttonName: { buttonOne: string, buttonTwo: string, button: string}
+    buttonName: { buttonOne: string, buttonTwo: string, button: string }
     namesValue: { nameMax: string, nameMin: string }
     changeInc: (value: number, name: string) => void
     setOfButton: (value: number, name: string) => void
@@ -35,7 +35,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     const setButton = () => {
         props.setDispleys(true)
         props.setOfButton(min, props.buttonName.button)
-        if(props.changeSettings){
+        if (props.changeSettings) {
             props.changeSettings()
         }
     }
@@ -86,7 +86,6 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                         />
                     </div>
                 </div>
-
             </div>
             <div className={s.button}>
                 <Button
@@ -98,8 +97,6 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     changeSettings={props.changeSettings}
                 />
             </div>
-
-
         </div>
     )
 }

@@ -2,14 +2,13 @@ import React, {useState} from "react";
 import './../../App.css';
 import {SetCloud} from "../settings/SetCloud";
 import {ClaudCounter} from "../inc/ClaudCounter";
-import {NavLink} from "react-router-dom";
 
 type CV = {
     min: number, max: number, num: number
 }
 type CoutnerSetType = {
     counterValue: { min: number, max: number, num: number }
-    buttonName: { buttonOne: string, buttonTwo: string, button: string}
+    buttonName: { buttonOne: string, buttonTwo: string, button: string }
     namesValue: { nameMax: string, nameMin: string }
     changeInc: (value: number, name: string) => void
     setOfButton: (value: number, name: string) => void
@@ -23,7 +22,6 @@ export const CustomCounter = (props: CoutnerSetType) => {
     const changeSettings = () => {
         setSettings(!settings)
     }
-
     return (
         <div className={'conteiner'}>
 
@@ -39,7 +37,6 @@ export const CustomCounter = (props: CoutnerSetType) => {
                     displey={props.displey}
                     id={settings}
                     changeSettings={changeSettings}
-
                 />
                 :
                 <ClaudCounter
@@ -50,8 +47,6 @@ export const CustomCounter = (props: CoutnerSetType) => {
                     displey={props.displey}
                     changeSettings={changeSettings}
                 />}
-
         </div>
-
     )
 }

@@ -6,7 +6,7 @@ import React from "react";
 type buttonProps = {
     counterValue: { min: number, max: number, num: number }
     buttonControl: (e: string) => void,
-    buttonName: { buttonOne: string, buttonTwo: string, button: string}
+    buttonName: { buttonOne: string, buttonTwo: string, button: string }
     displey: boolean
     id?: boolean
     changeSettings?: () => void
@@ -36,7 +36,6 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
                     buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonTwo}
-
                 />
                 {props.id &&
                 <Button
@@ -47,11 +46,7 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
                     id={props.id}
                     min={counterValue.min}
                     max={counterValue.max}
-
                 />}
-                {/*<NavLink to={"/FirsVar/"}><button className={a.buttonSet}> Первый счетчик</button></NavLink>*/}
-
-
             </div>
         </div>
     );
