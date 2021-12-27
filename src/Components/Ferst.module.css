@@ -7,11 +7,20 @@
     cursor: pointer;
     font-weight: bold;
 }
+.disabled {
+    border-radius: 25px;
+    border: 2px solid rgba(197, 18, 18, 0.73);
+    background-color: gray;
+    width: 85px;
+    color: rgba(197, 18, 18, 0.73);
+    cursor: pointer;
+    font-weight: bold;
+}
 
 .redFive {
     font-size: 65px;
     font-weight: bold;
-    color: red;
+    color: rgba(197, 18, 18, 0.73);
     font-weight: bold;
 }
 

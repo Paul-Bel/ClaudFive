@@ -62,7 +62,7 @@ function App() {
         <BrowserRouter>
             <div className={'App'}>
                 <div className={"block"}>
-                    <NavLink to={"/FirsVar/"}>
+                    <NavLink to={"/ClaudFive/"}>
                         <button className={'select'}>First_option</button>
                     </NavLink>
                     <NavLink to={"/SecondVar/"}>
@@ -70,7 +70,7 @@ function App() {
                     </NavLink>
                 </div>
                 <Routes>
-                    <Route path='/FirsVar'
+                    <Route path='/ClaudFive'
                            element={<CounterSet
                                counterValue={counterValue}
                                buttonName={buttonName}

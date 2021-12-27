@@ -40,6 +40,7 @@
     text-align: center;
     border: 2px solid midnightblue;
     color: midnightblue;
+    cursor: pointer;
 }
 
 .stylesInput {
@@ -50,5 +51,5 @@
     font-weight: bold;
     text-align: center;
     color: midnightblue;
-
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from '../Ferst.module.css'
 
 type ButtonPropsType = {
@@ -15,7 +15,7 @@ type ButtonPropsType = {
 }
 
 export function Button({num, min, max, buttonName, name, ...props}: ButtonPropsType) {
-        const buttonHandler = () => {
+    const buttonHandler = () => {
         if (props.buttonControl) {
             props.buttonControl()
         }
@@ -26,18 +26,19 @@ export function Button({num, min, max, buttonName, name, ...props}: ButtonPropsT
             props.changeSettings()
         }
     }
+    const disebled = (name === buttonName.buttonTwo && !props.display)
+        || (name === buttonName.button && props.display)
+        || (name === buttonName.buttonOne && num === max)
+        || (name === buttonName.buttonTwo && num === min)
+        || (min === -1)
+        || (min === max)
+
+
+
     return (
         <button
-            className={s.buttonSet}
-            disabled={
-                (name === buttonName.buttonOne && !props.display)
-                || (name === buttonName.buttonTwo && !props.display)
-                || (name === buttonName.button && props.display)
-                || (name === buttonName.buttonOne && num === max)
-                || (name === buttonName.buttonTwo && num === min)
-                || (min === -1)
-                || (min === max)
-            }
+            className={disebled ? s.disabled : s.buttonSet}
+            disabled={disebled}
             onClick={buttonHandler}
         >
             {name}
