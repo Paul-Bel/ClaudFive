@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: midnightblue;
+    background-color: #a7c6f5;
 }
 
 .block {
@@ -31,6 +31,6 @@
     border-radius: 15px 15px 0 0;
     background-color: gray;
     cursor: pointer;
-    color: midnightblue;
+    color: #a7c6f5;
 
 }

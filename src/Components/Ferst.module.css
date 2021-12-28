@@ -1,9 +1,9 @@
 .buttonSet {
     border-radius: 25px;
-    border: 2px solid midnightblue;
+    border: 2px solid #a7c6f5;
     background-color: gray;
     width: 85px;
-    color: midnightblue;
+    color: #a7c6f5;
     cursor: pointer;
     font-weight: bold;
 }
@@ -27,7 +27,7 @@
 .div {
     font-size: 35px;
     text-align: center;
-    color: midnightblue;
+    color: #a7c6f5;
 }
 
 .divSet {
