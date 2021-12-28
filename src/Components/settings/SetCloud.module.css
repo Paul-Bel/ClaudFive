@@ -5,7 +5,10 @@
     width: 270px;
     height: 140px;
 }
-
+.div {
+    text-align: center;
+    color: midnightblue;
+}
 .displey {
     border: 2px solid midnightblue;
     margin-bottom: 24px;

@@ -43,7 +43,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         <div className={s.item}>
             <div className={s.displey}>
                 <div className={s.setCoumter}>
-                    <div>
+                    <div className={s.div}>
                         {nameMax}
                     </div>
                     <div>
@@ -59,7 +59,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     </div>
                 </div>
                 <div className={s.setCoumter}>
-                    <div>
+                    <div className={s.div}>
                         {nameMin}
                     </div>
                     <div>
