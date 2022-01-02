@@ -17,7 +17,6 @@ type InputNumberType = {
     id?: boolean
     changeSettings?: () => void
 }
-
 export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     let {min, max} = counterValue
     const changeInc = () => {
