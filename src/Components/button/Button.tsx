@@ -8,6 +8,7 @@ type ButtonPropsType = {
     changeSettings?: (set: boolean) => void
     disabled?: boolean
     onChange?: (name: string) => void
+
 }
 
 export function Button({name, ...props}: ButtonPropsType) {

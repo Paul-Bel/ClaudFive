@@ -50,7 +50,6 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
                 <Button
                     changeSettings={props.changeSettings}
                     name={buttonName.button}
-                    settings={props.settings}
                     disabled={disabledSet}
                     onChange={onChange}
                 />}
