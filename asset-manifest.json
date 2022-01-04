@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ClaudFive/static/css/main.df605ceb.chunk.css",
-    "main.js": "/ClaudFive/static/js/main.e1c712ed.chunk.js",
-    "main.js.map": "/ClaudFive/static/js/main.e1c712ed.chunk.js.map",
+    "main.css": "/ClaudFive/static/css/main.c4be6818.chunk.css",
+    "main.js": "/ClaudFive/static/js/main.ffa52482.chunk.js",
+    "main.js.map": "/ClaudFive/static/js/main.ffa52482.chunk.js.map",
     "runtime-main.js": "/ClaudFive/static/js/runtime-main.180ba845.js",
     "runtime-main.js.map": "/ClaudFive/static/js/runtime-main.180ba845.js.map",
     "static/js/2.8a155bc3.chunk.js": "/ClaudFive/static/js/2.8a155bc3.chunk.js",
     "static/js/2.8a155bc3.chunk.js.map": "/ClaudFive/static/js/2.8a155bc3.chunk.js.map",
     "index.html": "/ClaudFive/index.html",
-    "static/css/main.df605ceb.chunk.css.map": "/ClaudFive/static/css/main.df605ceb.chunk.css.map",
+    "static/css/main.c4be6818.chunk.css.map": "/ClaudFive/static/css/main.c4be6818.chunk.css.map",
     "static/js/2.8a155bc3.chunk.js.LICENSE.txt": "/ClaudFive/static/js/2.8a155bc3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.180ba845.js",
     "static/js/2.8a155bc3.chunk.js",
-    "static/css/main.df605ceb.chunk.css",
-    "static/js/main.e1c712ed.chunk.js"
+    "static/css/main.c4be6818.chunk.css",
+    "static/js/main.ffa52482.chunk.js"
   ]
 }
