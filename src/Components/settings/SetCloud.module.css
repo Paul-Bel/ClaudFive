@@ -93,20 +93,6 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px) {
-    .redStyle {
-        width: 30px;
-        border-radius: 3px;
-    }
-
-    .stylesInput {
-        width: 30px;
-        border-radius: 2px;
-        font-size: 7px;
-    }
-}
-
-
 /*setting button*/
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -174,6 +160,9 @@ input[type=number]::-webkit-outer-spin-button {
     .button_Value_disabled {
         border: 1px solid rgba(197, 18, 18, 0.73);
         border-radius: 2px;
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
     }
 
     .button_Value:hover {
@@ -191,6 +180,17 @@ input[type=number]::-webkit-outer-spin-button {
 
     .displeyInput {
         /*width: 120px;*/
+    }
+    .redStyle {
+        width: 12px;
+        border-radius: 3px;
+        font-size: 7px;
+    }
+
+    .stylesInput {
+        width: 12px;
+        border-radius: 2px;
+        font-size: 7px;
     }
 }
 
