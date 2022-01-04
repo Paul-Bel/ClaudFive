@@ -18,6 +18,7 @@ type CoutnerSetType = {
 }
 export const CustomCounter = (props: CoutnerSetType) => {
     const [settings, setSettings] = useState(true)
+    console.log(settings + '  sett')
     const changeSettings = () => {
         setSettings(!settings)
     }

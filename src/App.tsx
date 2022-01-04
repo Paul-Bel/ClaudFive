@@ -9,6 +9,7 @@ function App() {
     let {buttonOne, buttonTwo} = buttonName
     let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
     const [displey, setDispleys] = useState(true)
+    console.log(displey + ' app')
     console.log(displey + ' znach')
     const [counterValue, setCounterValue] = useState({min: 0, max: 10, num: 0})
     useEffect(() => {

@@ -14,14 +14,21 @@ type buttonProps = {
 
 export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
 
-    const disebled = (buttonName.buttonTwo && !props.displey)
-        || (buttonName.button && props.displey)
-        || (buttonName.buttonOne && counterValue.num === counterValue.max)
-        || (buttonName.buttonTwo && counterValue.num === counterValue.min)
-        || (counterValue.min === -1)
-        || (counterValue.min === counterValue.max)
+    // const disabled = (buttonName.buttonTwo && !props.displey)
+        // || (buttonName.button && props.displey)
+        // || (buttonName.buttonOne && counterValue.num === counterValue.max)
+        // || (buttonName.buttonTwo && counterValue.num === counterValue.min)
+        // || (counterValue.min === -1)
+        // || (counterValue.min === counterValue.max)
+    const disabledInc = counterValue.num === counterValue.max || (counterValue.min === -1)
+    const disabledReset = counterValue.num === counterValue.min || (counterValue.min === -1)
+    const disabledSet = !props.displey || (counterValue.min === -1)
 
-
+    const onChange = (name: string) => {
+         props.buttonSetInc(name)
+        if(name === buttonName.button){
+        if(props.changeSettings) {props.changeSettings()}}
+    }
     return (
         <div className={s.item}>
             <div className={s.displey}>
@@ -29,32 +36,26 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
             </div>
             <div className={s.button}>
                 <Button
-                    num={counterValue.num}
                     buttonSetInc={() => props.buttonSetInc(buttonName.buttonOne)}
-                    min={counterValue.min}
-                    max={counterValue.max}
-                    buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonOne}
+                    disabled={disabledInc}
+                    onChange={onChange}
                 />
                 <Button
-                    num={counterValue.num}
                     buttonSetInc={() => props.buttonSetInc(buttonName.buttonTwo)}
-                    min={counterValue.min}
-                    max={counterValue.max}
-                    buttonName={buttonName}
                     display={props.displey}
                     name={buttonName.buttonTwo}
+                    disabled={disabledReset}
+                    onChange={onChange}
                 />
                 {props.settings &&
                 <Button
-                    buttonName={buttonName}
                     changeSettings={props.changeSettings}
                     name={buttonName.button}
-                    num={counterValue.num}
                     settings={props.settings}
-                    min={counterValue.min}
-                    max={counterValue.max}
+                    disabled={disabledSet}
+                    onChange={onChange}
                 />}
             </div>
         </div>

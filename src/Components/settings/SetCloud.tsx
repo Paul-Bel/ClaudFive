@@ -18,11 +18,13 @@ type InputNumberType = {
 }
 export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     let {min, max} = counterValue
-            const changeInc = () => {
+    const changeInc = () => {
         props.setDispleys(false)
     }
     const setButton = () => {
+        console.log(props.displey + ' do')
         props.setDispleys(true)
+        console.log(props.displey + ' posle')
         props.setOfButton(min, props.buttonName.button)
         if (props.changeSettings) {
             props.changeSettings()
@@ -37,6 +39,20 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
             props.setOfButton(Number(e.currentTarget.value), nameMin)
         }
     }
+    const disabled = false
+        // !props.displey
+        // || (counterValue.min === -1)
+
+
+
+    // (props.settings && props.displey)
+    // (props.buttonName.buttonTwo && !props.displey)
+    // ||
+    // (props.buttonName.button && props.displey)
+
+    // || (counterValue.min === -1)
+    // || (counterValue.min === counterValue.max)
+
     return (
         <div className={s.item}>
             <div className={s.displey}>
@@ -76,9 +92,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
             </div>
             <div className={s.button}>
                 <Button
-                    min={min}
-                    max={max}
-                    buttonName={props.buttonName}
+                    disabled={disabled}
                     setButton={setButton}
                     name={props.buttonName.button}
                     changeSettings={props.changeSettings}
