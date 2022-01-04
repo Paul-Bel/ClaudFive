@@ -147,7 +147,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     </div>
                 </div>
             </div>
-            <div className={s.button}>
+            <div className={!props.displey ? s.buttonSet : s.button}>
                 <Button
                     disabled={disabled}
                     setButton={setButton}

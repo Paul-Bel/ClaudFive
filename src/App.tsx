@@ -3,14 +3,23 @@ import './App.css';
 import {CounterSet} from "./Components/VariantOne/CounterSet";
 import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
 import {CustomCounter} from "./Components/VariantTwoo/CustomCounter";
+import {useSelector} from "react-redux";
+import {AppStateType} from "./Components/bll/store";
+
+type StateType = {min: number, max: number, num: number}
+type ValueType = {}
 
 function App() {
+    const countersValue = useSelector<AppStateType, StateType>(state => state.counter
+        )
+
+
     let buttonName = {buttonOne: "INC", buttonTwo: "RESET", button: "SET"}
     let {buttonOne, buttonTwo} = buttonName
     let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
     const [displey, setDispleys] = useState(true)
 
-    const [counterValue, setCounterValue] = useState({min: 0, max: 10, num: 0})
+    const [counterValue, setCounterValue] = useState<StateType>({min: 0, max: 10, num: 0})
     useEffect(() => {
         let values = (localStorage.getItem('values'))
         if (values) {
