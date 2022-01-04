@@ -18,8 +18,9 @@ type InputNumberType = {
 }
 export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     let {min, max} = counterValue
-    const changeInc = () => {
+    const changeInc = (e: MouseEvent<HTMLInputElement>) => {
         props.setDispleys(false)
+        e.preventDefault()
     }
     const setButton = () => {
         console.log(props.settings + ' ttttttttttt')
@@ -45,6 +46,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         if (e.currentTarget.id == '--') {
             props.setOfButton(min - 1, nameMin)
         }
+        props.setDispleys(false)
     }
         const doubleValueOnCklickButton = (e: MouseEvent<HTMLButtonElement>) => {
         if (e.currentTarget.id == nameMax) {
@@ -60,6 +62,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         if (e.currentTarget.id == '--' && min-10 >=-1) {
             props.setOfButton(min - 10, nameMin)
         }
+            props.setDispleys(false)
     }
 
 
@@ -91,6 +94,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             type="number"
                             onClick={changeInc}
                             step="1"
+                            disabled={true}
                         />
                         <button
                             className={min===max ? s.button_Value_disabled : s.button_Value}
@@ -127,6 +131,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             min={-1}
                             max={max}
                             onClick={changeInc}
+                            disabled={true}
                         />
                         <button
                             className={min===-1 ? s.button_Value_disabled : s.button_Value}

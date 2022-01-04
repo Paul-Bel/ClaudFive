@@ -35,18 +35,19 @@
 }
 
 .redStyle {
+    border: 2px solid #a7c6f5;
     background: red;
     width: 80px;
     border-radius: 5px;
     margin: 3px;
     font-weight: bold;
     text-align: center;
-    border: 2px solid #a7c6f5;
     color: #a7c6f5;
     cursor: pointer;
 }
 
 .stylesInput {
+    border: 2px solid #a7c6f5;
     background-color: gray;
     width: 80px;
     border-radius: 5px;
@@ -63,9 +64,7 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 .button_Value {
-    margin: 0 1px 0 6px;
     border: 2px solid #a7c6f5;
     background-color: gray;
     color: #a7c6f5;
@@ -73,17 +72,14 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 4px;
 }
 .button_Value_disabled {
-    margin: 0 1px 0 6px;
     border: 2px solid rgba(197, 18, 18, 0.73);
     background-color: gray;
     color: rgba(197, 18, 18, 0.73);
     cursor: pointer;
     border-radius: 4px;
 }
-
-.button_Value :hover {
-    margin: 0 1px 0 6px;
-    border: 2px solid black;
+.button_Value:hover {
+    border: 2px solid #a7c6f5;
     background-color: gray;
     color: #a7c6f5;
     box-shadow:
@@ -94,6 +90,7 @@ input[type=number]::-webkit-outer-spin-button {
             2px 2px #a7c6f5,
             2px 2px #a7c6f5,
             2px 2px #a7c6f5;
-    -webkit-transform: translateX(-7px);
-    transform: translateX(-7px);
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
 }
+/*setting button*/
