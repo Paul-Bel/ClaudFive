@@ -23,7 +23,6 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         e.preventDefault()
     }
     const setButton = () => {
-        console.log(props.settings + ' ttttttttttt')
         props.setDispleys(true)
         props.setOfButton(min, props.buttonName.button)
         if (props.changeSettings) {
@@ -48,21 +47,21 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         }
         props.setDispleys(false)
     }
-        const doubleValueOnCklickButton = (e: MouseEvent<HTMLButtonElement>) => {
+    const doubleValueOnCklickButton = (e: MouseEvent<HTMLButtonElement>) => {
         if (e.currentTarget.id == nameMax) {
             props.setOfButton(max + 10, nameMax)
         }
-        if (e.currentTarget.id == '-' && max>=min-10) {
+        if (e.currentTarget.id == '-' && max >= min + 10) {
             props.setOfButton(max - 10, nameMax)
         }
 
-        if (e.currentTarget.id == nameMin && min+10 <= max) {
+        if (e.currentTarget.id == nameMin && min + 10 <= max) {
             props.setOfButton(min + 10, nameMin)
         }
-        if (e.currentTarget.id == '--' && min-10 >=-1) {
+        if (e.currentTarget.id == '--' && min - 10 >= -1) {
             props.setOfButton(min - 10, nameMin)
         }
-            props.setDispleys(false)
+        props.setDispleys(false)
     }
 
 
@@ -90,18 +89,20 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             min={min}
                             id={nameMax}
                             value={max}
-                            onKeyPress={(e)=>{e.preventDefault()}}
+                            onKeyPress={(e) => {
+                                e.preventDefault()
+                            }}
                             type="number"
                             onClick={changeInc}
                             step="1"
                             disabled={true}
                         />
                         <button
-                            className={min===max ? s.button_Value_disabled : s.button_Value}
+                            className={min === max ? s.button_Value_disabled : s.button_Value}
                             id={'-'}
                             onClick={valueOnCklickButton}
                             onDoubleClick={doubleValueOnCklickButton}
-                            disabled={max===min}
+                            disabled={max === min}
                         >
                             -
                         </button>
@@ -113,11 +114,11 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     </div>
                     <div>
                         <button
-                            className={min===max ? s.button_Value_disabled : s.button_Value}
+                            className={min === max ? s.button_Value_disabled : s.button_Value}
                             id={nameMin}
                             onClick={valueOnCklickButton}
                             onDoubleClick={doubleValueOnCklickButton}
-                            disabled={max===min}
+                            disabled={max === min}
                         >
                             +
                         </button>
@@ -126,7 +127,8 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             id={nameMin}
                             value={min}
                             onKeyPress={(e) => {
-                                e.preventDefault()}}
+                                e.preventDefault()
+                            }}
                             type="number"
                             min={-1}
                             max={max}
@@ -134,11 +136,11 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             disabled={true}
                         />
                         <button
-                            className={min===-1 ? s.button_Value_disabled : s.button_Value}
+                            className={min === -1 ? s.button_Value_disabled : s.button_Value}
                             id={'--'}
                             onClick={valueOnCklickButton}
                             onDoubleClick={doubleValueOnCklickButton}
-                            disabled={min===-1}
+                            disabled={min === -1}
                         >
                             -
                         </button>

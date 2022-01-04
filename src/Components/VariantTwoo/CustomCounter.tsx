@@ -18,14 +18,15 @@ type CoutnerSetType = {
 }
 export const CustomCounter = (props: CoutnerSetType) => {
     const [settings, setSettings] = useState(true)
-    console.log(settings + '  sett')
+
+
     const changeSettings = (set: boolean) => {
         setSettings(set)
     }
     return (
         <div className={'conteiner'}>
 
-            {!settings ?
+            {settings ?
                 <SetCloud
                     counterValue={props.counterValue}
                     buttonName={props.buttonName}
