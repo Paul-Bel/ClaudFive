@@ -30,14 +30,14 @@
     .buttonSet {
         border-radius: 15px;
         border: 1px solid #a7c6f5;
-        width: 51px;
-        font-size: 10px;
+        width: 44px;
+        font-size: 8px;
     }
     .buttonSet:hover {
         border-radius: 15px;
         border: 1px solid #a7c6f5;
-        width: 51px;
-        font-size: 10px;
+        width: 44px;
+        font-size: 8px;
         box-shadow:
                 1px 1px #a7c6f5,
                 2px 2px #a7c6f5,
