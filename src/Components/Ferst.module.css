@@ -85,8 +85,8 @@
     .disabled {
         border-radius: 15px;
         border: 1px solid rgba(197, 18, 18, 0.73);
-        width: 51px;
-        font-size: 10px;
+        width: 44px;
+        font-size: 8px;
     }
     .redFive {
         font-size: 30px;
