@@ -42,7 +42,6 @@
 @media screen and (max-width: 800px) {
     .conteiner {
         width: 400px;
-
     }
 }
 
@@ -78,7 +77,7 @@
 
 @media screen and (max-width: 800px) {
     .select {
-        width: 200px;
+        width: 199px;
         font-size: 15px;
     }
     .select:hover {

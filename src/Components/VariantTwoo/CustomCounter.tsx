@@ -26,7 +26,7 @@ export const CustomCounter = (props: CoutnerSetType) => {
     return (
         <div className={'conteiner'}>
 
-            {settings ?
+            {!settings ?
                 <SetCloud
                     counterValue={props.counterValue}
                     buttonName={props.buttonName}
