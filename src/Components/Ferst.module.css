@@ -7,6 +7,27 @@
     cursor: pointer;
     font-weight: bold;
 }
+.buttonSet:hover {
+    border-radius: 25px;
+    border: 2px solid #a7c6f5;
+    background-color: gray;
+    width: 85px;
+    color: #a7c6f5;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow:
+            1px 1px #a7c6f5,
+            2px 2px #a7c6f5,
+            2px 2px #a7c6f5,
+            2px 2px #a7c6f5,
+            2px 2px #a7c6f5,
+            2px 2px #a7c6f5,
+            2px 2px #a7c6f5;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+
 .disabled {
     border-radius: 25px;
     border: 2px solid rgba(197, 18, 18, 0.73);

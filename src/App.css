@@ -4,9 +4,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px;
     padding: 50px 0;
-    /*border: midnightblue;*/
+    border: solid #a7c6f5;
 }
 
 .App {
@@ -26,11 +26,30 @@
 }
 
 .select {
+    border: 3px solid gray;
     font-size: 30px;
-    width: 320px;
-    border-radius: 15px 15px 0 0;
+    width: 382px;
+    border-radius: 15px;
     background-color: gray;
     cursor: pointer;
     color: #a7c6f5;
-
+}
+.select:hover {
+    font-size: 30px;
+    width: 382px;
+    border-radius: 15px;
+    background-color: #a7c6f5;
+    border: 3px solid gray;
+    cursor: pointer;
+    color: gray;
+    box-shadow:
+            4px 4px gray,
+            2px 2px gray,
+            2px 2px gray,
+            2px 2px gray,
+            2px 2px gray,
+            2px 2px gray,
+            2px 2px gray;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
 }
