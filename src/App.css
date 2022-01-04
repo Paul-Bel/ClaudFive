@@ -1,8 +1,4 @@
-@media screen and (max-width: 800px) {
-    .App {
-        width: 500px;
-    }
-}
+
 
 .App {
     margin: 0 auto;
@@ -13,11 +9,24 @@
     flex-direction: column;
     background-color: #a7c6f5;
 }
+@media screen and (max-width: 800px) {
+    .App {
+        width: 500px;
+    }
+}
 
 .block {
     width: 700px;
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+}
+@media screen and (max-width: 800px) {
+    .block {
+        width: 400px;
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+    }
 }
 
 .conteiner {
@@ -30,7 +39,12 @@
     padding: 50px 0;
     border: solid #a7c6f5;
 }
+@media screen and (max-width: 800px) {
+    .conteiner {
+        width: 400px;
 
+    }
+}
 
 .select {
     border: 3px solid gray;
@@ -41,6 +55,7 @@
     cursor: pointer;
     color: #a7c6f5;
 }
+
 .select:hover {
     font-size: 30px;
     width: 350px;
@@ -61,3 +76,28 @@
     transform: translateX(-3px);
 }
 
+@media screen and (max-width: 800px) {
+    .select {
+        width: 200px;
+        font-size: 15px;
+    }
+    .select:hover {
+        font-size: 15px;
+        width: 200px;
+        border-radius: 15px;
+        background-color: #a7c6f5;
+        border: 3px solid gray;
+        cursor: pointer;
+        color: gray;
+        box-shadow:
+                4px 4px gray,
+                2px 2px gray,
+                2px 2px gray,
+                2px 2px gray,
+                2px 2px gray,
+                2px 2px gray,
+                2px 2px gray;
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+}
