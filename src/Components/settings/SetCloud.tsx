@@ -75,7 +75,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     <div className={s.div}>
                         {nameMax}
                     </div>
-                    <div>
+                    <div className={s.displeyInput}>
                         <button
                             className={s.button_Value}
                             id={nameMax}
@@ -112,7 +112,7 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                     <div className={s.div}>
                         {nameMin}
                     </div>
-                    <div>
+                    <div className={s.displeyInput}>
                         <button
                             className={min === max ? s.button_Value_disabled : s.button_Value}
                             id={nameMin}

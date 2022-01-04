@@ -23,11 +23,33 @@
             2px 2px #a7c6f5,
             2px 2px #a7c6f5,
             2px 2px #a7c6f5;
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
 }
-
-
+@media screen and (max-width: 800px) {
+    .buttonSet {
+        border-radius: 15px;
+        border: 1px solid #a7c6f5;
+        width: 51px;
+        font-size: 10px;
+    }
+    .buttonSet:hover {
+        border-radius: 15px;
+        border: 1px solid #a7c6f5;
+        width: 51px;
+        font-size: 10px;
+        box-shadow:
+                1px 1px #a7c6f5,
+                2px 2px #a7c6f5,
+                2px 2px #a7c6f5,
+                2px 2px #a7c6f5,
+                2px 2px #a7c6f5,
+                2px 2px #a7c6f5,
+                2px 2px #a7c6f5;
+        -webkit-transform: translateX(-2px);
+        transform: translateX(-2px);
+    }
+}
 .disabled {
     border-radius: 25px;
     border: 2px solid rgba(197, 18, 18, 0.73);
@@ -37,20 +59,17 @@
     cursor: pointer;
     font-weight: bold;
 }
-
 .redFive {
     font-size: 65px;
     font-weight: bold;
     color: rgba(197, 18, 18, 0.73);
     font-weight: bold;
 }
-
 .div {
     font-size: 35px;
     text-align: center;
     color: #a7c6f5;
 }
-
 .divSet {
     /*margin: 0 auto;*/
     font-size: 25px;
@@ -61,4 +80,25 @@
 .counter {
     font-size: 65px;
     font-weight: bold;
+}
+@media screen and (max-width: 800px) {
+    .disabled {
+        border-radius: 15px;
+        border: 1px solid rgba(197, 18, 18, 0.73);
+        width: 51px;
+        font-size: 10px;
+    }
+    .redFive {
+        font-size: 30px;
+    }
+
+    .div {
+        font-size: 21px;
+    }
+    .divSet {
+        font-size: 15px;
+    }
+    .counter {
+        font-size: 30px;
+    }
 }
