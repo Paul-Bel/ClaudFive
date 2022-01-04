@@ -19,8 +19,8 @@ type CoutnerSetType = {
 export const CustomCounter = (props: CoutnerSetType) => {
     const [settings, setSettings] = useState(true)
     console.log(settings + '  sett')
-    const changeSettings = () => {
-        setSettings(!settings)
+    const changeSettings = (set: boolean) => {
+        setSettings(set)
     }
     return (
         <div className={'conteiner'}>
@@ -45,6 +45,7 @@ export const CustomCounter = (props: CoutnerSetType) => {
                     buttonName={props.buttonName}
                     displey={props.displey}
                     changeSettings={changeSettings}
+                    setDispleys={props.setDispleys}
                 />}
         </div>
     )

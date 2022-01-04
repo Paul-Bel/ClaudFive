@@ -8,26 +8,24 @@ type buttonProps = {
     buttonSetInc: (e: string) => void,
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
     displey: boolean
+    setDispleys: (display: boolean) => void
     settings?: boolean
-    changeSettings?: () => void
+    changeSettings?: (set: boolean) => void
 }
 
 export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) {
 
-    // const disabled = (buttonName.buttonTwo && !props.displey)
-        // || (buttonName.button && props.displey)
-        // || (buttonName.buttonOne && counterValue.num === counterValue.max)
-        // || (buttonName.buttonTwo && counterValue.num === counterValue.min)
-        // || (counterValue.min === -1)
-        // || (counterValue.min === counterValue.max)
     const disabledInc = counterValue.num === counterValue.max || (counterValue.min === -1)
     const disabledReset = counterValue.num === counterValue.min || (counterValue.min === -1)
-    const disabledSet = !props.displey || (counterValue.min === -1)
+    const disabledSet = !props.displey
+        || (counterValue.min === -1)
+
+
 
     const onChange = (name: string) => {
          props.buttonSetInc(name)
         if(name === buttonName.button){
-        if(props.changeSettings) {props.changeSettings()}}
+        if(props.changeSettings) {props.changeSettings(false)}}
     }
     return (
         <div className={s.item}>
@@ -37,18 +35,17 @@ export function ClaudCounter({buttonName, counterValue, ...props}: buttonProps) 
             <div className={s.button}>
                 <Button
                     buttonSetInc={() => props.buttonSetInc(buttonName.buttonOne)}
-                    display={props.displey}
                     name={buttonName.buttonOne}
                     disabled={disabledInc}
                     onChange={onChange}
                 />
                 <Button
                     buttonSetInc={() => props.buttonSetInc(buttonName.buttonTwo)}
-                    display={props.displey}
                     name={buttonName.buttonTwo}
                     disabled={disabledReset}
                     onChange={onChange}
                 />
+
                 {props.settings &&
                 <Button
                     changeSettings={props.changeSettings}

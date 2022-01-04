@@ -37,6 +37,7 @@ export const CounterSet = (props: CoutnerSetType) => {
                     buttonSetInc={props.buttonSetInc}
                     buttonName={props.buttonName}
                     displey={props.displey}
+                    setDispleys={props.setDispleys}
                 />
             </div>
         </div>
