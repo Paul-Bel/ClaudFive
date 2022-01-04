@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from "react";
+import React, {ChangeEvent, MouseEvent} from "react";
 import s from './SetCloud.module.css'
 import {Button} from "../button/Button";
 
@@ -30,18 +30,41 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
         }
     }
     let {nameMax, nameMin} = props.namesValue
-    const setValue = (e: ChangeEvent<HTMLInputElement>) => {
+
+    const valueOnCklickButton = (e: MouseEvent<HTMLButtonElement>) => {
         if (e.currentTarget.id == nameMax) {
-            props.setOfButton(e.currentTarget.valueAsNumber, nameMax)
+            props.setOfButton(max + 1, nameMax)
         }
+        if (e.currentTarget.id == '-') {
+            props.setOfButton(max - 1, nameMax)
+        }
+
         if (e.currentTarget.id == nameMin) {
-            props.setOfButton(Number(e.currentTarget.value), nameMin)
+            props.setOfButton(min + 1, nameMin)
         }
-        if (props.changeSettings) {
-            props.changeSettings(false)
+        if (e.currentTarget.id == '--') {
+            props.setOfButton(min - 1, nameMin)
         }
     }
+        const doubleValueOnCklickButton = (e: MouseEvent<HTMLButtonElement>) => {
+        if (e.currentTarget.id == nameMax) {
+            props.setOfButton(max + 10, nameMax)
+        }
+        if (e.currentTarget.id == '-' && max>=min-10) {
+            props.setOfButton(max - 10, nameMax)
+        }
+
+        if (e.currentTarget.id == nameMin && min+10 <= max) {
+            props.setOfButton(min + 10, nameMin)
+        }
+        if (e.currentTarget.id == '--' && min-10 >=-1) {
+            props.setOfButton(min - 10, nameMin)
+        }
+    }
+
+
     const disabled = min === max || (min === -1)
+
 
     return (
         <div className={s.item}>
@@ -51,17 +74,33 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                         {nameMax}
                     </div>
                     <div>
+                        <button
+                            className={s.button_Value}
+                            id={nameMax}
+                            onClick={valueOnCklickButton}
+                            onDoubleClick={doubleValueOnCklickButton}
+                        >
+                            +
+                        </button>
                         <input
                             className={min === max ? s.redStyle : s.stylesInput}
                             min={min}
                             id={nameMax}
                             value={max}
-                            onChange={setValue}
                             onKeyPress={(e)=>{e.preventDefault()}}
                             type="number"
                             onClick={changeInc}
-
+                            step="1"
                         />
+                        <button
+                            className={min===max ? s.button_Value_disabled : s.button_Value}
+                            id={'-'}
+                            onClick={valueOnCklickButton}
+                            onDoubleClick={doubleValueOnCklickButton}
+                            disabled={max===min}
+                        >
+                            -
+                        </button>
                     </div>
                 </div>
                 <div className={s.setCoumter}>
@@ -69,18 +108,35 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                         {nameMin}
                     </div>
                     <div>
+                        <button
+                            className={min===max ? s.button_Value_disabled : s.button_Value}
+                            id={nameMin}
+                            onClick={valueOnCklickButton}
+                            onDoubleClick={doubleValueOnCklickButton}
+                            disabled={max===min}
+                        >
+                            +
+                        </button>
                         <input
                             className={min === max ? s.redStyle : min === -1 ? s.redStyle : s.stylesInput}
                             id={nameMin}
                             value={min}
-                            onChange={setValue}
-                            onKeyPress={(e)=>{e.preventDefault()}}
-                            onKeyUp={(e) => e.preventDefault()}
+                            onKeyPress={(e) => {
+                                e.preventDefault()}}
                             type="number"
                             min={-1}
                             max={max}
                             onClick={changeInc}
                         />
+                        <button
+                            className={min===-1 ? s.button_Value_disabled : s.button_Value}
+                            id={'--'}
+                            onClick={valueOnCklickButton}
+                            onDoubleClick={doubleValueOnCklickButton}
+                            disabled={min===-1}
+                        >
+                            -
+                        </button>
                     </div>
                 </div>
             </div>
