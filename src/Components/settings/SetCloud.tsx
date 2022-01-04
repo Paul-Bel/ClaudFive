@@ -1,6 +1,6 @@
 import React, {ChangeEvent} from "react";
 import s from './SetCloud.module.css'
-import {Button} from "../inc/Button";
+import {Button} from "../button/Button";
 
 type CV = {
     min: number, max: number, num: number
@@ -9,17 +9,16 @@ type InputNumberType = {
     counterValue: { min: number, max: number, num: number }
     buttonName: { buttonOne: string, buttonTwo: string, button: string }
     namesValue: { nameMax: string, nameMin: string }
-    changeInc: (value: number, name: string) => void
     setOfButton: (value: number, name: string) => void
     setDispleys: (display: boolean) => void
     setCounterValue: (value: CV) => void
     displey: boolean
-    id?: boolean
+    settings?: boolean
     changeSettings?: () => void
 }
 export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
     let {min, max} = counterValue
-    const changeInc = () => {
+            const changeInc = () => {
         props.setDispleys(false)
     }
     const setButton = () => {

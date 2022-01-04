@@ -10,9 +10,7 @@ function App() {
     let namesValue = {nameMax: "Max Value", nameMin: "Min Value"}
     const [displey, setDispleys] = useState(true)
     console.log(displey + ' znach')
-    const [counterValue, setCounterValue] = useState(
-        {min: 0, max: 10, num: 0}
-    )
+    const [counterValue, setCounterValue] = useState({min: 0, max: 10, num: 0})
     useEffect(() => {
         let values = (localStorage.getItem('values'))
         if (values) {
@@ -40,16 +38,8 @@ function App() {
             setCounterValue({...copys})
         }
     }
-    const changeInc = (value: number, name: string) => {
-        let copy = {...counterValue}
-        if (name === namesValue.nameMax) {
-            setCounterValue({...copy, max: value})
-        }
-        if (name === namesValue.nameMin) {
-            setCounterValue({...copy, min: value})
-        }
-    }
-    const buttonInc = (but: string) => {
+
+    const buttonSetInc = (but: string) => {
         let copy = {...counterValue}
         if (but === buttonOne && counterValue.num < counterValue.max) {
             setCounterValue({...copy, num: (counterValue.num + 1)})
@@ -75,12 +65,11 @@ function App() {
                                counterValue={counterValue}
                                buttonName={buttonName}
                                namesValue={namesValue}
-                               changeInc={changeInc}
                                setOfButton={setOfButton}
                                setCounterValue={setCounterValue}
                                setDispleys={setDispleys}
                                displey={displey}
-                               buttonControl={buttonInc}
+                               buttonSetInc={buttonSetInc}
                            />}/>
                     <Route path='/SecondVar'
                            element={
@@ -88,12 +77,11 @@ function App() {
                                    counterValue={counterValue}
                                    buttonName={buttonName}
                                    namesValue={namesValue}
-                                   changeInc={changeInc}
                                    setOfButton={setOfButton}
                                    setCounterValue={setCounterValue}
                                    setDispleys={setDispleys}
                                    displey={displey}
-                                   buttonControl={buttonInc}
+                                   buttonSetInc={buttonSetInc}
                                />}/>
                 </Routes>
             </div>
