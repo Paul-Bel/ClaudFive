@@ -57,8 +57,10 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             id={nameMax}
                             value={max}
                             onChange={setValue}
+                            onKeyPress={(e)=>{e.preventDefault()}}
                             type="number"
                             onClick={changeInc}
+
                         />
                     </div>
                 </div>
@@ -72,6 +74,8 @@ export const SetCloud = ({counterValue, ...props}: InputNumberType) => {
                             id={nameMin}
                             value={min}
                             onChange={setValue}
+                            onKeyPress={(e)=>{e.preventDefault()}}
+                            onKeyUp={(e) => e.preventDefault()}
                             type="number"
                             min={-1}
                             max={max}
